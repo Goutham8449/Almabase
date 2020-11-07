@@ -1,11 +1,7 @@
-"""
-
-"""
-
 from github import Github
 import json
 
-g = Github("Insert your github OAuth token here")
+g = Github("Insert your Github Oauth Key here")
 
 
 def getTopCommittees(company_name,m,n):
@@ -53,7 +49,7 @@ def getTopCommittees(company_name,m,n):
         result.append(partial_result)
         i+=1
 
-    return json.dumps(result)
+    return json.dumps(result,indent=3)
 
             
 
