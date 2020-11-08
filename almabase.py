@@ -1,7 +1,7 @@
 from github import Github
 import json
 
-g = Github("Insert your Github Oauth Key here")
+g = Github("Insert your Github Oauth token here")
 
 
 def getTopCommittees(company_name,m,n):
@@ -29,12 +29,12 @@ def getTopCommittees(company_name,m,n):
 
         #Uses the Github API to get the PaginatedList of top contributors to the repo
         contributors = repo.get_contributors()
-        m = min(m,contributors.totalCount)
+        k = min(m,contributors.totalCount)
         j=0
 
         #Iterating through the committees
         for contributor in contributors:
-            if j==m:
+            if j==k:
                 break
             c = {}
             c["committee_name"] = contributor.name
